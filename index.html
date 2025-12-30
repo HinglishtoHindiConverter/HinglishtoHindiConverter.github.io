@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hinglish to Hindi Converter | Free Online Typing Tool</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Effortlessly convert Hinglish (Hindi written in English letters) to the proper Hindi Devanagari script with our free, fast, and client-side online tool. Perfect for documents, messages, and learning Hindi typing.">
+  <meta name="keywords" content="Hinglish to Hindi, Hindi typing, Hinglish converter, English to Hindi typing, Devanagari script, Hindi transliteration, online Hindi keyboard, type in Hindi">
+  <link rel="canonical" href="https://your-domain.com/hinglish-to-hindi-converter/">
+  <meta name="google-site-verification" content="Jckt0D42OYbsPcM_iaRfgFkfhtDDXYMrnyXVXG67sWU" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-domain.com/hinglish-to-hindi-converter/">
+  <meta property="og:title" content="Hinglish to Hindi Converter | Free Online Typing Tool">
+  <meta property="og:description" content="Instantly convert Hinglish text to the Devanagari script in your browser. Fast, free, and works offline.">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://your-domain.com/hinglish-to-hindi-converter/">
+  <meta property="twitter:title" content="Hinglish to Hindi Converter | Free Online Typing Tool">
+  <meta property="twitter:description" content="Instantly convert Hinglish text to the Devanagari script in your browser. Fast, free, and works offline.">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom font for Devanagari script for better rendering */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .hindi-text {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+    }
+  </style>
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Hinglish to Hindi Converter",
+    "description": "A free online tool to instantly convert Hinglish (Hindi written in Latin script) to the official Devanagari script directly in the browser.",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Any (Web-based)",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "mainEntity": {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Hinglish to Hindi Converter?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "This is a free online utility that transliterates text written in Hinglish (Hindi using English/Latin alphabet) into the official Devanagari script for Hindi. It allows users to type Hindi phonetically without needing a special Hindi keyboard."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does this tool work? Does it use AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, this tool does not use AI. It operates on a sophisticated, rule-based algorithm that runs entirely within your web browser (client-side). It maps Hinglish phonetic patterns to their corresponding Devanagari characters, ensuring instant and private conversions without sending your data to a server."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this Hindi typing tool free to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, this tool is completely free to use. There are no hidden charges or usage limits."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why use this tool instead of a standard Hindi keyboard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many people find standard Devanagari keyboards complex and slow to use. Typing phonetically in Hinglish is often faster and more intuitive for those accustomed to QWERTY keyboards. This tool bridges that gap, providing the speed of Hinglish typing with the formality of a pure Devanagari script output, which is essential for official documents, emails, and formal communication."
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+</head>
+<body class="bg-slate-900 text-slate-200 antialiased">
+  
+  <main class="min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-slate-900 to-slate-800">
+    <div class="w-full max-w-4xl mx-auto">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500">
+          Hinglish to Hindi Converter
+        </h1>
+        <p class="mt-2 text-lg text-slate-400">Instantly convert Hinglish to Devanagari script locally in your browser.</p>
+      </div>
+
+      <div class="bg-slate-800/50 rounded-2xl shadow-2xl backdrop-blur-sm border border-slate-700 overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-slate-700">
+          <!-- Hinglish Input -->
+          <div class="bg-slate-800 p-6">
+            <label for="hinglish-input" class="block text-sm font-medium text-sky-400 mb-2">Hinglish (Latin Script)</label>
+            <textarea
+              id="hinglish-input"
+              rows="10"
+              placeholder="Mera naam Ahmed hai..."
+              class="w-full bg-slate-900/50 border border-slate-600 rounded-lg p-4 text-slate-200 focus:ring-2 focus:ring-sky-500 focus:border-sky-500 transition-colors duration-200 resize-none text-lg leading-relaxed"
+            ></textarea>
+          </div>
+
+          <!-- Hindi Output -->
+          <div class="bg-slate-800 p-6 relative">
+            <label for="hindi-output" class="block text-sm font-medium text-sky-400 mb-2">Hindi (Devanagari Script)</label>
+            <textarea
+              id="hindi-output"
+              readonly
+              rows="10"
+              placeholder="मेरा नाम अहमद है..."
+              class="w-full bg-slate-900/50 border border-slate-600 rounded-lg p-4 text-slate-200 transition-colors duration-200 resize-none text-xl leading-relaxed hindi-text"
+            ></textarea>
+          </div>
+        </div>
+        
+        <!-- Actions -->
+        <div class="p-4 bg-slate-800/50 border-t border-slate-700">
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-4">
+              <button
+                id="copy-btn"
+                class="flex items-center gap-2 px-4 py-2 rounded-md font-semibold text-sm transition-all duration-200 bg-sky-500 text-white hover:bg-sky-400 disabled:opacity-50 disabled:cursor-not-allowed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+                <span id="copy-btn-text">Copy</span>
+              </button>
+              <button
+                id="clear-btn"
+                class="flex items-center gap-2 px-4 py-2 rounded-md font-semibold bg-slate-600 text-slate-200 hover:bg-slate-500 transition-colors duration-200 text-sm disabled:opacity-50 disabled:cursor-not-allowed">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" x2="10" y1="11" y2="17"></line><line x1="14" x2="14" y1="11" y2="17"></line></svg>
+                <span>Clear</span>
+              </button>
+            </div>
+            <p class="text-xs text-slate-500">Client-side Transliteration Engine</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="py-16 bg-slate-900 text-slate-300">
+    <div class="max-w-4xl mx-auto px-4 space-y-12">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold text-sky-400">The Power of Effortless Hindi Typing</h2>
+        <p class="mt-4 max-w-3xl mx-auto text-lg text-slate-400">
+          Bridge the gap between casual Hinglish and formal Hindi. Our tool is designed for students, professionals, and anyone who needs to produce accurate Devanagari text quickly.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h3 class="text-2xl font-semibold text-white mb-3">What is Hinglish?</h3>
+          <p class="text-slate-400 leading-relaxed">
+            Hinglish is a portmanteau of Hindi and English, representing the common practice of writing the Hindi language using the Latin (English) alphabet. It's widely used in text messages, social media, and informal communication because it's faster to type on standard QWERTY keyboards. For example, "Aap kaise hain?" is Hinglish for "आप कैसे हैं?".
+          </p>
+        </div>
+        <div>
+          <h3 class="text-2xl font-semibold text-white mb-3">Why Convert to Devanagari?</h3>
+          <p class="text-slate-400 leading-relaxed">
+            While Hinglish is convenient for casual chats, the official script for the Hindi language is Devanagari. For formal documents, government paperwork, professional emails, or any official communication, using the correct Devanagari script is essential for clarity, professionalism, and accuracy. This tool makes that transition seamless.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="py-16 bg-slate-800/50">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-sky-400 mb-8">Frequently Asked Questions (FAQ)</h2>
+      <div class="space-y-6">
+        <div class="bg-slate-800 p-6 rounded-lg">
+          <h3 class="font-semibold text-lg text-white">What is the Hinglish to Hindi Converter?</h3>
+          <p class="mt-2 text-slate-400">This is a free online utility that transliterates text written in Hinglish (Hindi using English/Latin alphabet) into the official Devanagari script for Hindi. It allows users to type Hindi phonetically without needing a special Hindi keyboard.</p>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg">
+          <h3 class="font-semibold text-lg text-white">How does this tool work? Does it use AI?</h3>
+          <p class="mt-2 text-slate-400">No, this tool does not use AI. It operates on a sophisticated, rule-based algorithm that runs entirely within your web browser (client-side). It maps Hinglish phonetic patterns to their corresponding Devanagari characters, ensuring instant and private conversions without sending your data to a server.</p>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg">
+          <h3 class="font-semibold text-lg text-white">Is this Hindi typing tool free to use?</h3>
+          <p class="mt-2 text-slate-400">Yes, this tool is completely free to use. There are no hidden charges or usage limits.</p>
+        </div>
+        <div class="bg-slate-800 p-6 rounded-lg">
+          <h3 class="font-semibold text-lg text-white">Why use this tool instead of a standard Hindi keyboard?</h3>
+          <p class="mt-2 text-slate-400">Many people find standard Devanagari keyboards complex and slow to use. Typing phonetically in Hinglish is often faster and more intuitive for those accustomed to QWERTY keyboards. This tool bridges that gap, providing the speed of Hinglish typing with the formality of a pure Devanagari script output, which is essential for official documents, emails, and formal communication.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-slate-900 py-6">
+    <div class="max-w-4xl mx-auto px-4 text-center text-slate-500">
+      <p>&copy; 2026 Hinglish to Hindi Converter. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const hinglishInput = document.getElementById('hinglish-input');
+    const hindiOutput = document.getElementById('hindi-output');
+    const copyBtn = document.getElementById('copy-btn');
+    const copyBtnText = document.getElementById('copy-btn-text');
+    const clearBtn = document.getElementById('clear-btn');
+
+    let debounceTimer;
+
+    const mapping = {
+        'k': 'क', 'kh': 'ख', 'g': 'ग', 'gh': 'घ', 'ng': 'ङ',
+        'ch': 'च', 'chh': 'छ', 'j': 'ज', 'jh': 'झ', 'ny': 'ञ',
+        't': 'ट', 'th': 'ठ', 'd': 'ड', 'dh': 'ढ', 'n': 'ण',
+        'p': 'प', 'ph': 'फ', 'f': 'फ', 'b': 'ब', 'bh': 'भ', 'm': 'म',
+        'y': 'य', 'r': 'र', 'l': 'ल', 'v': 'व', 'w': 'व',
+        'sh': 'श', 'shh': 'ष', 's': 'स', 'h': 'ह',
+        'ksh': 'क्ष', 'tr': 'त्र', 'gy': 'ज्ञ',
+        'a': 'अ', 'aa': 'आ', 'i': 'इ', 'ee': 'ई', 'i': 'ई',
+        'u': 'उ', 'oo': 'ऊ', 'u': 'ऊ', 'ri': 'ऋ', 'e': 'ए',
+        'ai': 'ऐ', 'o': 'ओ', 'au': 'औ',
+        'an': 'अं', 'am': 'अं', 'ah': 'अः'
+    };
+
+    const matras = {
+        'aa': 'ा', 'i': 'ि', 'ee': 'ी', 'i': 'ी', 'u': 'ु',
+        'oo': 'ू', 'u': 'ू', 'ri': 'ृ', 'e': 'े', 'ai': 'ै',
+        'o': 'ो', 'au': 'ौ', 'an': 'ं', 'am': 'ं', 'ah': 'ः'
+    };
+    
+    const dentalMapping = { // Dental sounds have lower priority
+        't': 'त', 'th': 'थ', 'd': 'द', 'dh': 'ध', 'n': 'न'
+    };
+
+    const halant = '्';
+    const vowels = 'aeiou';
+
+    // Sort keys by length, descending, to match longest first
+    const sortedKeys = Object.keys(mapping).sort((a, b) => b.length - a.length);
+    const sortedDentalKeys = Object.keys(dentalMapping).sort((a, b) => b.length - a.length);
+
+    function isVowel(char) {
+        return vowels.includes(char);
+    }
+    
+    function transliterate(text) {
+        let output = '';
+        let i = 0;
+
+        while (i < text.length) {
+            let found = false;
+            let lastCharWasVowel = false;
+
+            // Check for longest matching phoneme first
+            for (const key of sortedKeys) {
+                if (text.substring(i, i + key.length).toLowerCase() === key) {
+                    let charToAdd = mapping[key];
+                    
+                    if (isVowel(key[0])) { // It's a vowel
+                        if (lastCharWasVowel || output.length === 0 || output.slice(-1) === ' ' || output.slice(-1) === '\n') {
+                           // Use full vowel form
+                        } else if (matras[key]) {
+                           // Use matra form
+                           if(output.endsWith(halant)) {
+                               output = output.slice(0, -1); // remove halant
+                           }
+                           charToAdd = matras[key];
+                        }
+                        lastCharWasVowel = true;
+                    } else { // It's a consonant
+                        if (!output.endsWith(halant)) {
+                            // no change
+                        }
+                        charToAdd += halant;
+                        lastCharWasVowel = false;
+                    }
+
+                    output += charToAdd;
+                    i += key.length;
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                 // Check for dental sounds if no other match
+                for (const key of sortedDentalKeys) {
+                    if (text.substring(i, i + key.length).toLowerCase() === key) {
+                         if (i + key.length === text.length || !isVowel(text[i + key.length])) {
+                             output += dentalMapping[key] + halant;
+                             i += key.length;
+                             found = true;
+                             lastCharWasVowel = false;
+                             break;
+                         }
+                    }
+                }
+            }
+
+            if (!found) {
+                let char = text[i];
+                if (output.endsWith(halant) && (char === ' ' || char === '.' || char === ',' || char === '\n')) {
+                    output = output.slice(0, -1);
+                }
+                 // Handle 'a' implicitly
+                if (!isVowel(char.toLowerCase()) && i > 0 && !isVowel(text[i-1].toLowerCase()) && text[i-1] !== ' ') {
+                     if(output.endsWith(halant)) {
+                        output = output.slice(0, -1);
+                     }
+                }
+
+                output += char;
+                i++;
+                lastCharWasVowel = isVowel(char.toLowerCase());
+            }
+        }
+        
+        // Final cleanup of halant at the end of words or sentences
+        return output.replace(new RegExp(`${halant}(?=[\\s.,!?\n]|$)`, 'g'), '');
+    }
+
+    function handleInput() {
+        const inputText = hinglishInput.value;
+        // A simple rule-based conversion. This is a basic implementation.
+        let hindiText = '';
+        const words = inputText.split(/(\s+)/);
+        
+        words.forEach(word => {
+            if (/^\s+$/.test(word)) { // if the "word" is just whitespace
+                hindiText += word;
+            } else {
+                hindiText += transliterate(word);
+            }
+        });
+
+        hindiOutput.value = hindiText;
+        updateButtonStates();
+    }
+    
+    function updateButtonStates() {
+        const hasInput = hinglishInput.value.length > 0;
+        const hasOutput = hindiOutput.value.length > 0;
+        copyBtn.disabled = !hasOutput;
+        clearBtn.disabled = !hasInput && !hasOutput;
+    }
+    
+    hinglishInput.addEventListener('input', () => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(handleInput, 150);
+    });
+
+    copyBtn.addEventListener('click', () => {
+        if (!hindiOutput.value) return;
+        navigator.clipboard.writeText(hindiOutput.value).then(() => {
+            const originalText = copyBtnText.textContent;
+            copyBtn.classList.remove('bg-sky-500', 'hover:bg-sky-400');
+            copyBtn.classList.add('bg-green-500');
+            copyBtnText.textContent = 'Copied!';
+            
+            setTimeout(() => {
+                copyBtnText.textContent = originalText;
+                copyBtn.classList.add('bg-sky-500', 'hover:bg-sky-400');
+                copyBtn.classList.remove('bg-green-500');
+            }, 2000);
+        });
+    });
+
+    clearBtn.addEventListener('click', () => {
+        hinglishInput.value = '';
+        hindiOutput.value = '';
+        updateButtonStates();
+    });
+
+    updateButtonStates();
+});
+</script>
+
+</body>
+</html>
